@@ -493,7 +493,6 @@ height: 5em;
 .d-header {
   height: 5.5em;
 }
-/* Quantity controls on cards */
 .qty-controls {
   display: flex;
   align-items: center;
@@ -525,7 +524,6 @@ height: 5em;
   text-align: center;
 }
 
-/* Floating cart button */
 .cart-fab {
   position: fixed;
   bottom: 28px;
@@ -559,7 +557,7 @@ height: 5em;
   justify-content: center;
 }
 
-/* Cart Drawer */
+
 .cart-drawer {
   position: fixed;
   top: 0;
@@ -691,7 +689,6 @@ height: 5em;
 
 .checkout-btn:hover { background: #5C4033; }
 
-/* Overlay */
 .cart-overlay {
   display: none;
   position: fixed;
@@ -705,7 +702,6 @@ height: 5em;
   display: block;
 }
 
-/* Toast */
 .cart-toast {
   position: fixed;
   bottom: 90px;
@@ -728,7 +724,6 @@ height: 5em;
   transform: translateY(0);
 }
 
-/* Mobile responsive */
 @media (max-width: 600px) {
   .cart-drawer { width: 100vw; }
   .cart-fab { bottom: 16px; right: 16px; }
