@@ -24,11 +24,19 @@
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
+    
+       <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <ul class="mobile-menu" id="mobile-menu">
+        <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+        <li><a href="#menu" onclick="toggleMenu()">Menu</a></li>
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+    </ul>
 </nav>
- 
+
 <section id="home" class="herosection">
     <div class="hero-slides">
-        <div class="slide active" style="background-image: linear-gradient(135deg, #7a4f2e 0%, #c0824d 50%, #e8b87d 100%);"></div>
+        <div class="slide active" style="background-image: linear-gradient(135deg, #D4a574 0%, #c0824d 50%, #e8b87d 100%);"></div>
         <div class="slide" style="background-image: linear-gradient(135deg, #3a2a1f 0%, #7a4f2e 60%, #D4A574 100%);"></div>
         <div class="slide" style="background-image: linear-gradient(135deg, #c0824d 0%, #5C4033 100%);"></div>
     </div>
@@ -236,7 +244,7 @@
                 <ul>
                     <li><a href="https://www.facebook.com/share/1HzUBtWwep/">Mr. Dom Managbanag</a></li>
                     <li><a href="#">Block 10 Northville, Santo Rosario, Brgy. Bagong Nayon 1, Antipolo City</a></li>
-                    <li><a>09274528790</a></li>
+                    <li><a href="https://www.facebook.com/share/1HzUBtWwep/">contact@nickssnackcorner.com</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -265,12 +273,48 @@
     </div>
     <ul id="cart-items" class="cart-list"></ul>
     <div id="cart-total" class="cart-total">Total: ₱0</div>
-    <button class="checkout-btn">Checkout</button>
+    <button class="checkout-btn" onclick="openCheckout()">Checkout</button>
 </div>
  
 <div class="cart-overlay" onclick="toggleCart()"></div>
 <div id="cart-toast" class="cart-toast"></div>
  
 <script src="cart.js"></script>
+
+<div id="checkout-modal" class="checkout-modal-overlay" onclick="closeCheckoutOnOverlay(event)">
+  <div class="checkout-container">
+    <div class="checkout-header">
+      <h3>Checkout</h3>
+      <button class="cart-close" onclick="closeCheckout()">✕</button>
+    </div>
+
+    <div id="checkout-summary" class="checkout-summary"></div>
+
+    <form onsubmit="submitOrder(event)">
+      <div class="form-group">
+        <label for="address">Delivery Address</label>
+        <textarea class="input-field" id="address" name="address" placeholder="Enter your full address" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="input-field" id="name" name="name" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="payment">Payment Method</label>
+        <input type="text" class="input-field" id="payment" name="payment" value="Cash" readonly>
+      </div>
+
+      <button type="submit" class="checkout-btn">Place Order</button>
+    </form>
+  </div>
+</div>
+<script>
+function toggleMenu() {
+    document.getElementById('mobile-menu').classList.toggle('open');
+}
+</script>
+
 </body>
 </html>
