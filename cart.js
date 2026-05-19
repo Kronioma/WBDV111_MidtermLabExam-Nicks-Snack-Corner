@@ -151,8 +151,7 @@ function submitOrder(event) {
   setTimeout(() => toast.classList.remove('show'), 3000);
  
 
-  const WHATSAPP_NUMBER = "639XXXXXXXXX";
-  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
+ 
  
  
 }
